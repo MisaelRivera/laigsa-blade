@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\FoodSample;
+use App\Models\LearningExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Order;
@@ -28,3 +29,6 @@ Route::get('/orders', function (Request $request) {
     }
     return response()->json($orders);
 })->middleware('cors');
+
+Route::get('/learning_experiences', [LearningExperience::class, 'index']);
+Route::post('/learning_experiences', [LearningExperience::class, 'store']);

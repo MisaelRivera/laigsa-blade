@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrdersController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/orders')->group(function () {
+    Route::get('/', [OrdersController::class, 'index']);
 });
