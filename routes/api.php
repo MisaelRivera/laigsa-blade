@@ -1,11 +1,11 @@
 <?php
 
 use App\Models\FoodSample;
-use App\Models\LearningExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Order;
 use App\Models\WaterSample;
+use App\Http\Controllers\LearningExperiencesController;
 
 Route::get('/orders', function (Request $request) {
     $page = 1;
@@ -30,5 +30,5 @@ Route::get('/orders', function (Request $request) {
     return response()->json($orders);
 })->middleware('cors');
 
-Route::get('/learning_experiences', [LearningExperience::class, 'index']);
-Route::post('/learning_experiences', [LearningExperience::class, 'store']);
+Route::get('/learning_experiences', [LearningExperiencesController::class, 'index'])->middleware('cors');
+Route::post('/learning_experiences', [LearningExperiencesController::class, 'store'])->middleware('cors');

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LearningExperience;
 
-class LeraningExperiencesController extends Controller
+class LearningExperiencesController extends Controller
 {
     //
     public function index () {
@@ -19,7 +19,7 @@ class LeraningExperiencesController extends Controller
         'name' => 'required',
         'rating' => 'required'
        ]); 
-
+       
        LearningExperience::create($data);
     }
  }
